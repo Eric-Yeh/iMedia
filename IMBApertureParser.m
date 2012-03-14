@@ -328,7 +328,7 @@
 	}
 
 	if (outError) *outError = error;
-	return error == nil;
+	return (error == nil);
 }
 
 
