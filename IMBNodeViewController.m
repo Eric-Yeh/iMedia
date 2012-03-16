@@ -1143,6 +1143,24 @@ static NSString* kIMBSelectNodeWithIdentifierNotification = @"IMBSelectNodeWithI
 
 //----------------------------------------------------------------------------------------------------------------------
 
+- (IBAction)manageNode:(id)sender
+{
+    switch ([sender selectedSegment]) {
+        case 0:
+            [self addNode:sender];
+            break;
+        case 1:
+            [self removeNode:sender];
+            break;
+        case 2:
+            [self reloadNode:sender];
+            break;
+        default:
+            break;
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------
 
 #pragma mark 
 #pragma mark Context Menu

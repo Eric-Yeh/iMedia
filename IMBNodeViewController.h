@@ -147,6 +147,8 @@
 - (BOOL) canRemoveNode;
 - (IBAction) removeNode:(id)inSender;
 
+- (IBAction)manageNode:(id)sender;
+
 // Object Views...
 
 - (void) installObjectViewForNode:(IMBNode*)inNode;
