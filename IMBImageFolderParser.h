@@ -70,6 +70,9 @@
 @interface IMBPicturesFolderParser : IMBImageFolderParser
 @end
 
+@interface IMBMyPhotoPoolsFolderParser : IMBImageFolderParser
+@end
+
 // This subclass looks only in "/Library/Desktop Pictures"...
 
 //@interface IMBDesktopPicturesFolderParser : IMBImageFolderParser

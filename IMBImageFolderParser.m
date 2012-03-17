@@ -134,6 +134,42 @@
 
 //----------------------------------------------------------------------------------------------------------------------
 
+#pragma mark 
+
+@implementation IMBMyPhotoPoolsFolderParser : IMBImageFolderParser
+
+// Register this parser, so that it gets automatically loaded...
+
++ (void) load
+{
+    NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+    [IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
+    [pool drain];
+}
+
+
+// Set the folder path to ~/Pictures...
+
+- (id) initWithMediaType:(NSString*)inMediaType
+{
+	if (self = [super initWithMediaType:inMediaType])
+	{
+        NSFileManager *fm = [[NSFileManager alloc] init];
+        NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"] stringByAppendingPathComponent:@"My Photo Pools"];
+        [fm createDirectoryAtPath:path 
+      withIntermediateDirectories:YES 
+                       attributes:nil
+                            error:NULL];
+		self.mediaSource = path;
+        [fm release];
+	}
+	return self;
+}
+
+@end
+
+
+//----------------------------------------------------------------------------------------------------------------------
 
 #pragma mark 
 
