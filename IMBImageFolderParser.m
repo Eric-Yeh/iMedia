@@ -155,7 +155,7 @@
 	if (self = [super initWithMediaType:inMediaType])
 	{
         NSFileManager *fm = [[NSFileManager alloc] init];
-        NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"] stringByAppendingPathComponent:@"My Photo Pools"];
+        NSString *path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Pictures"] stringByAppendingPathComponent:@"My360PhotoPools"];
         [fm createDirectoryAtPath:path 
       withIntermediateDirectories:YES 
                        attributes:nil
