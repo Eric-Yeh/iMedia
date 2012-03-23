@@ -251,7 +251,7 @@
 - (IMBParser *)parserController:(IMBParserController *)controller willLoadParser:(IMBParser *)parser;
 {
 #if LOG_PARSERS
-	NSLog(@"%s inParser=%@ inMediaType=%@",__FUNCTION__,NSStringFromClass(inParser.class),inMediaType);
+	NSLog(@"%s inParser=%@ inMediaType=%@",__FUNCTION__,NSStringFromClass(parser.class), parser.mediaType);
 #endif
 	
     if ([parser isKindOfClass:[IMBFlickrParser class]])
