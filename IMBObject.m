@@ -119,6 +119,8 @@ NSString* kIMBQuickLookImageProperty = @"quickLookImage";
 
 @synthesize metadataDescription = _metadataDescription;
 
+@synthesize isAddedToBucket = _isAddedToBucket;
+
 @synthesize parser = _parser;
 - (void)setParser:(IMBParser *)parser
 {

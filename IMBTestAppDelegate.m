@@ -67,10 +67,10 @@
 
 #pragma mark CONSTANTS
 
-#define LOG_PARSERS 0
-#define LOG_CREATE_NODE 0
-#define LOG_POPULATE_NODE 0
-#define CUSTOM_USER_INTERFACE 0
+#define LOG_PARSERS 1
+#define LOG_CREATE_NODE 1
+#define LOG_POPULATE_NODE 1
+#define CUSTOM_USER_INTERFACE 1
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -516,7 +516,7 @@
 	{
 		return NULL;
 	}
-	
+
 	return [self badgeForObject:inObject];
 }
 

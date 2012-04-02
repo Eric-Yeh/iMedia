@@ -110,6 +110,9 @@ extern NSString* kIMBQuickLookImageProperty;
 	// Generic image support through Quick Look
 	CGImageRef _quickLookImage;
 	BOOL _isLoadingQuickLookImage;
+    
+    // Image Bucket support
+    BOOL _isAddedToBucket;
 }
 
 // Primary properties...
@@ -127,6 +130,8 @@ extern NSString* kIMBQuickLookImageProperty;
 @property (assign) NSUInteger index;						// Index of object in the array (optional)
 @property (assign) BOOL shouldDrawAdornments;				// YES if border/shadow should be drawn
 @property (assign) BOOL shouldDisableTitle;					// YES if title should be shown as disabled (e.g. not draggable)
+
+@property (assign) BOOL isAddedToBucket;
 
 // Helpers...
 
