@@ -95,6 +95,7 @@ extern NSString* kIMBNodesDidChangeNotification;
 
 //----------------------------------------------------------------------------------------------------------------------
 
+@protocol IMBLibraryControllerDelegate;
 
 #pragma mark 
 
@@ -103,7 +104,7 @@ extern NSString* kIMBNodesDidChangeNotification;
 	NSString* _mediaType;
 	NSMutableArray* _rootNodes;
 	IMBOptions _options;
-	id _delegate;
+	id <IMBLibraryControllerDelegate> _delegate;
 
 	BOOL _isReplacingNode;
 	IMBKQueue* _watcherUKKQueue;
@@ -122,7 +123,7 @@ extern NSString* kIMBNodesDidChangeNotification;
 
 @property (retain) NSString* mediaType;
 @property (assign) IMBOptions options;
-@property (assign) id delegate;
+@property (assign) id <IMBLibraryControllerDelegate> delegate;
 @property (retain) IMBKQueue* watcherUKKQueue;
 @property (retain) IMBFSEventsWatcher* watcherFSEvents;
 @property (readonly) BOOL isReplacingNode;
@@ -162,7 +163,7 @@ extern NSString* kIMBNodesDidChangeNotification;
 
 #pragma mark 
 
-@protocol IMBLibraryControllerDelegate
+@protocol IMBLibraryControllerDelegate <NSObject>
 
 @optional
 
