@@ -2343,6 +2343,10 @@ NSString* const IMBObjectViewControllerSegmentedControlKey = @"SegmentedControl"
 	[[inSender window] makeKeyWindow];
 }
 
+- (NSArray *)selectedObjects
+{
+    return [ibObjectArrayController selectedObjects];
+}
 
 //----------------------------------------------------------------------------------------------------------------------
 

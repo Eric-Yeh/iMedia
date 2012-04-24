@@ -230,6 +230,8 @@ extern NSString* kIMBObjectImageRepresentationProperty;
 
 - (IBAction) tableViewWasDoubleClicked:(id)inSender;
 
+- (NSArray*) selectedObjects;
+
 @end
 
 
