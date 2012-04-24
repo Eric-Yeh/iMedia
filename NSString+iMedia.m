@@ -618,7 +618,7 @@
 				if (resolvedUrl != NULL)
 				{
 					resolvedPath =
-                    [(id)CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle)
+                    [(NSString *)CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle)
                      autorelease];
 					CFRelease(resolvedUrl);
 				}
