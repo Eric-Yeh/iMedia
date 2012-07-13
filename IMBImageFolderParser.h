@@ -75,18 +75,18 @@
 
 // This subclass looks only in "/Library/Desktop Pictures"...
 
-//@interface IMBDesktopPicturesFolderParser : IMBImageFolderParser
-//@end
+@interface IMBDesktopPicturesFolderParser : IMBImageFolderParser
+@end
 
 // This subclass looks only in "/Library/User Pictures"...
 
-//@interface IMBUserPicturesFolderParser : IMBImageFolderParser
-//@end
+@interface IMBUserPicturesFolderParser : IMBImageFolderParser
+@end
 
 // This subclass looks only in "/Library/Application Support/Apple/iChat Icons"...
 
-//@interface IMBiChatIconsFolderParser : IMBImageFolderParser
-//@end
+@interface IMBiChatIconsFolderParser : IMBImageFolderParser
+@end
 
 
 //----------------------------------------------------------------------------------------------------------------------

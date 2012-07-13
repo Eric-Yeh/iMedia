@@ -173,32 +173,32 @@
 
 #pragma mark 
 
-//@implementation IMBDesktopPicturesFolderParser
-//
-//
-//// Register this parser, so that it gets automatically loaded...
-//
-//+ (void) load
-//{
-//	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-//	[IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
-//	[pool drain];
-//}
-//
-//
-//// Set the folder path to /Library/Desktop Pictures...
-//
-//- (id) initWithMediaType:(NSString*)inMediaType
-//{
-//	if (self = [super initWithMediaType:inMediaType])
-//	{
-//		self.mediaSource = @"/Library/Desktop Pictures";
-//	}
-//	
-//	return self;
-//}
-//
-//@end
+@implementation IMBDesktopPicturesFolderParser
+
+
+// Register this parser, so that it gets automatically loaded...
+
++ (void) load
+{
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+	[IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
+	[pool drain];
+}
+
+
+// Set the folder path to /Library/Desktop Pictures...
+
+- (id) initWithMediaType:(NSString*)inMediaType
+{
+	if (self = [super initWithMediaType:inMediaType])
+	{
+		self.mediaSource = @"/Library/Desktop Pictures";
+	}
+	
+	return self;
+}
+
+@end
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -206,32 +206,32 @@
 
 #pragma mark 
 
-//@implementation IMBUserPicturesFolderParser
-//
-//
-//// Register this parser, so that it gets automatically loaded...
-//
-//+ (void) load
-//{
-//	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-//	[IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
-//	[pool drain];
-//}
-//
-//
-//// Set the folder path to /Library/User Pictures...
-//
-//- (id) initWithMediaType:(NSString*)inMediaType
-//{
-//	if (self = [super initWithMediaType:inMediaType])
-//	{
-//		self.mediaSource = @"/Library/User Pictures";
-//	}
-//	
-//	return self;
-//}
-//
-//@end
+@implementation IMBUserPicturesFolderParser
+
+
+// Register this parser, so that it gets automatically loaded...
+
++ (void) load
+{
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+	[IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
+	[pool drain];
+}
+
+
+// Set the folder path to /Library/User Pictures...
+
+- (id) initWithMediaType:(NSString*)inMediaType
+{
+	if (self = [super initWithMediaType:inMediaType])
+	{
+		self.mediaSource = @"/Library/User Pictures";
+	}
+	
+	return self;
+}
+
+@end
 
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -239,32 +239,32 @@
 
 #pragma mark 
 
-//@implementation IMBiChatIconsFolderParser
-//
-//
-//// Register this parser, so that it gets automatically loaded...
-//
-//+ (void) load
-//{
-//	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-//	[IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
-//	[pool drain];
-//}
-//
-//
-//// Set the folder path to /Library/Application Support/Apple/iChat Icons...
-//
-//- (id) initWithMediaType:(NSString*)inMediaType
-//{
-//	if (self = [super initWithMediaType:inMediaType])
-//	{
-//		self.mediaSource = @"/Library/Application Support/Apple/iChat Icons";
-//	}
-//	
-//	return self;
-//}
-//
-//@end
+@implementation IMBiChatIconsFolderParser
+
+
+// Register this parser, so that it gets automatically loaded...
+
++ (void) load
+{
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+	[IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeImage];
+	[pool drain];
+}
+
+
+// Set the folder path to /Library/Application Support/Apple/iChat Icons...
+
+- (id) initWithMediaType:(NSString*)inMediaType
+{
+	if (self = [super initWithMediaType:inMediaType])
+	{
+		self.mediaSource = @"/Library/Application Support/Apple/iChat Icons";
+	}
+	
+	return self;
+}
+
+@end
 
 
 //----------------------------------------------------------------------------------------------------------------------
