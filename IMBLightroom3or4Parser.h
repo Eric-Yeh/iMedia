@@ -41,69 +41,28 @@
  LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF
  CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH, THE
  SOFTWARE OR THE USE OF, OR OTHER DEALINGS IN, THE SOFTWARE.
-*/
+ */
 
 
-// Author: Unknown
+// Author: Pierre Bernard
 
 
-#import <Cocoa/Cocoa.h>
+//----------------------------------------------------------------------------------------------------------------------
 
-@interface NSObject ( NSString_UTI )
 
-+ (NSString *)imb_UTIForFileType:(NSString *)aFileType;
-+ (NSString *)imb_descriptionForUTI:(NSString *)aUTI;
-+ (NSString *)imb_UTIForFilenameExtension:(NSString *)anExtension;
-+ (NSString *)imb_UTIForFileAtPath:(NSString *)anAbsolutePath;
-+ (BOOL) imb_doesUTI:(NSString *)aUTI conformsToUTI:(NSString *)aConformsToUTI;
-+ (BOOL) imb_doesFileAtPath:(NSString*)inPath conformToUTI:(NSString*)inRequiredUTI;
+#pragma mark HEADERS
 
-@end
+#import "IMBLightroomParser.h"
 
-@interface NSString ( iMedia )
 
-- (NSString *)imb_pathForURLString;
-- (NSString *)imb_path;
+@interface IMBLightroom3or4Parser : IMBLightroomParser
+{
+	
+}
 
-+ (id)uuid;
-
-- (NSString *)imb_exifDateToLocalizedDisplayDate;
-
-+ (NSString *)imb_stringFromStarRating:(NSUInteger)aRating;
-
-- (NSComparisonResult)imb_finderCompare:(NSString *)aString;
-
-- (NSString *)imb_resolvedPath;
-
-@end
-
-@interface NSMutableString (iMedia)
-
-- (void)imb_appendNewline;
+- (NSNumber*) databaseVersion;
 
 @end
 
 
-@interface NSString (SymlinksAndAliases)
-
-//  Created by Matt Gallagher on 2010/02/22.
-//  Copyright 2010 Matt Gallagher. All rights reserved.
-//
-//  Permission is given to use this source code file, free of charge, in any
-//  project, commercial or otherwise, entirely at your risk, with the condition
-//  that any redistribution (in part or whole) of source code must retain
-//  this copyright and permission notice. Attribution in compiled projects is
-//  appreciated but not required.
-
-- (NSString *)stringByResolvingSymlinksAndAliases;
-- (NSString *)stringByIterativelyResolvingSymlinkOrAlias;
-
-- (NSString *)stringByResolvingSymlink;
-- (NSString *)stringByConditionallyResolvingSymlink;
-
-- (NSString *)stringByResolvingAlias;
-- (NSString *)stringByConditionallyResolvingAlias;
-
-@end
-
-
+//----------------------------------------------------------------------------------------------------------------------

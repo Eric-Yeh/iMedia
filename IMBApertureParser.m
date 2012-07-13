@@ -312,7 +312,6 @@
 
 - (BOOL) populateNode:(IMBNode*)inNode options:(IMBOptions)inOptions error:(NSError**)outError
 {
-	NSError* error = nil;
 	NSDictionary* plist = self.plist;
 	NSDictionary* images = [plist objectForKey:@"Master Image List"];
 	
@@ -327,8 +326,7 @@
 		[self populateNode:inNode albums:albums images:images]; 
 	}
 
-	if (outError) *outError = error;
-	return (error == nil);
+	return YES;
 }
 
 
@@ -530,7 +528,17 @@
 
 - (BOOL) isAllPhotosAlbum:(NSDictionary*)inAlbumDict
 {
-	return [[inAlbumDict objectForKey:@"uuid"] isEqualToString:@"allPhotosAlbum"];
+	return ([[inAlbumDict objectForKey:@"uuid"] isEqualToString:@"allPhotosAlbum"] ||
+            [[inAlbumDict objectForKey:@"Album Type"] isEqualToString:@"94"]);
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// Returns whether inAlbumDict is the "Events" (aka "Projects") album.
+
+- (BOOL) isEventsAlbum:(NSDictionary*)inAlbumDict
+{
+	return [[inAlbumDict objectForKey:@"Album Type"] isEqualToString:@"97"];
 }
 
 
@@ -593,7 +601,7 @@
 	static const IMBIconTypeMappingEntry kIconTypeMappingEntries[] =
 	{
 		{@"v3-Photo Stream",@"SL-stream.tiff",          @"folder",	nil,	nil},   // photo stream
-		{@"v3-Faces",@"sl-icon-small_people.tiff",		@"folder",	nil,	nil},   // faces
+		{@"v3-Faces",@"SL-faces.tiff",                  @"folder",	nil,	nil},   // faces
 		{@"v3-1",	@"SL-album.tiff",					@"folder",	nil,	nil},	// album
 		{@"v3-2",	@"SL-smartAlbum.tiff",				@"folder",	nil,	nil},	// smart album
 		{@"v3-3",	@"SL-smartAlbum.tiff",				@"folder",	nil,	nil},	// library **** ... 200X
