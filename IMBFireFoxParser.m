@@ -19,20 +19,20 @@
  persons to whom the Software is furnished to do so, subject to the following
  conditions:
  
-	Redistributions of source code must retain the original terms stated here,
-	including this list of conditions, the disclaimer noted below, and the
-	following copyright notice: Copyright (c) 2005-2012 by Karelia Software et al.
+ Redistributions of source code must retain the original terms stated here,
+ including this list of conditions, the disclaimer noted below, and the
+ following copyright notice: Copyright (c) 2005-2012 by Karelia Software et al.
  
-	Redistributions in binary form must include, in an end-user-visible manner,
-	e.g., About window, Acknowledgments window, or similar, either a) the original
-	terms stated here, including this list of conditions, the disclaimer noted
-	below, and the aforementioned copyright notice, or b) the aforementioned
-	copyright notice and a link to karelia.com/imedia.
+ Redistributions in binary form must include, in an end-user-visible manner,
+ e.g., About window, Acknowledgments window, or similar, either a) the original
+ terms stated here, including this list of conditions, the disclaimer noted
+ below, and the aforementioned copyright notice, or b) the aforementioned
+ copyright notice and a link to karelia.com/imedia.
  
-	Neither the name of Karelia Software, nor Sandvox, nor the names of
-	contributors to iMedia Browser may be used to endorse or promote products
-	derived from the Software without prior and express written permission from
-	Karelia Software or individual contributors, as appropriate.
+ Neither the name of Karelia Software, nor Sandvox, nor the names of
+ contributors to iMedia Browser may be used to endorse or promote products
+ derived from the Software without prior and express written permission from
+ Karelia Software or individual contributors, as appropriate.
  
  Disclaimer: THE SOFTWARE IS PROVIDED BY THE COPYRIGHT OWNER AND CONTRIBUTORS
  "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
@@ -41,7 +41,7 @@
  LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF
  CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH, THE
  SOFTWARE OR THE USE OF, OR OTHER DEALINGS IN, THE SOFTWARE.
-*/
+ */
 
 
 // Author: Dan Wood
@@ -93,7 +93,7 @@
 
 
 //----------------------------------------------------------------------------------------------------------------------
-		
+
 // Create a single parser instance for Firefox bookmarks (if found)
 
 + (NSArray*) parserInstancesForMediaType:(NSString*)inMediaType
@@ -122,7 +122,7 @@
 	
 	NSMutableArray *libraryPaths = [NSMutableArray arrayWithArray:libraryPaths1];
 	[libraryPaths addObjectsFromArray:libraryPaths2];
-
+    
 	NSFileManager *fm = [NSFileManager imb_threadSafeManager];
 	for (NSString *path in libraryPaths)
 	{
@@ -184,8 +184,8 @@
 			NSError *error = nil;
 			(void) [fm removeItemAtPath:newPath error:nil];
 			BOOL copied = (nil != self.databasePathOriginal)
-				&& (nil != newPath)
-				&& [fm copyItemAtPath:self.databasePathOriginal toPath:newPath error:&error];
+            && (nil != newPath)
+            && [fm copyItemAtPath:self.databasePathOriginal toPath:newPath error:&error];
 			if (!copied)
 			{
 				NSLog(@"Unable to copy Firefox bookmarks.");
@@ -289,7 +289,7 @@
 			node.subNodes = [NSArray array];		// Empty subnodes/objects since we couldn't read it.
 			node.objects = [NSArray array];
 		}
-	
+        
 		self.database = nil;	// close the database
 	}
 	else
@@ -320,12 +320,12 @@
 // Just load all the bookmarks in the tree -- this is not going to be that memory-intensive.
 
 - (BOOL) populateNode:(IMBNode*)inNode options:(IMBOptions)inOptions error:(NSError**)outError
-{	
+{
 	NSMutableArray *subNodes = [NSMutableArray array];
 	NSMutableArray *objects = [NSMutableArray array];
-
+    
 	NSNumber *parentIDNumber = [inNode.attributes objectForKey:@"id"];
-
+    
 	FMResultSet *rs = nil;
 	
 	// First get the folders (type 2)
@@ -341,15 +341,15 @@
 	}
 	
 	NSUInteger index = 0;
-
+    
 	while ([rs next])
-	{		
-//		NSLog(@"%@>%@ '%@' %@", 
-//			  parentIDNumber,
-//			  [rs stringForColumn:@"id"],
-//			  [rs stringForColumn:@"title"],
-//			  @"type=2");
-
+	{
+        //		NSLog(@"%@>%@ '%@' %@",
+        //			  parentIDNumber,
+        //			  [rs stringForColumn:@"id"],
+        //			  [rs stringForColumn:@"title"],
+        //			  @"type=2");
+        
 		int theID = [rs intForColumn:@"id"];
 		NSString *theName = [rs stringForColumn:@"title"];
 		if (theName && ![theName isEqualToString:@""])	// make sure we have a title; otherwise bogus
@@ -387,9 +387,9 @@
 		}
 	}
 	inNode.subNodes = subNodes;
-
+    
 	[rs close]; rs = nil;
-		
+    
 	// Now get the bookmarks (type 1)
 	while (self.database && !rs)	// keep trying until we get result set (or database is invalid)
 	{
@@ -402,15 +402,15 @@
 	}
 	
 	while ([rs next])
-	{		
+	{
 		IMBObject *object = [[[IMBObject alloc] init] autorelease];
 		
-//		NSLog(@"%@>%@ '%@' %@", 
-//			  [rs stringForColumn:@"parent"],
-//			  [rs stringForColumn:@"id"],
-//			  [rs stringForColumn:@"title"],
-//			  [rs stringForColumn:@"type"]);
-
+        //		NSLog(@"%@>%@ '%@' %@",
+        //			  [rs stringForColumn:@"parent"],
+        //			  [rs stringForColumn:@"id"],
+        //			  [rs stringForColumn:@"title"],
+        //			  [rs stringForColumn:@"type"]);
+        
 		
 		object.name = [rs stringForColumn:@"title"];
 		object.location = [NSURL URLWithString:[rs stringForColumn:@"url"]];
@@ -419,8 +419,8 @@
 		if (imageData)
 		{
 			NSImage *iconImage = [NSImage imb_imageWithData:imageData mimeType:[rs stringForColumn:@"mime_type"]];
-//			[icon setScalesWhenResized:YES];
-//			[icon setSize:NSMakeSize(16.0,16.0)];
+            //			[icon setScalesWhenResized:YES];
+            //			[icon setSize:NSMakeSize(16.0,16.0)];
 			object.imageRepresentationType = IKImageBrowserNSImageRepresentationType;
 			object.imageRepresentation = iconImage;
 		}
@@ -437,7 +437,7 @@
 			object.imageRepresentationType = IKImageBrowserNSImageRepresentationType;
 			object.imageRepresentation = sGenericIcon;
 		}
-
+        
 		object.parser = self;
 		
 		[objects addObject:object];
@@ -453,16 +453,16 @@
 		[self populateNode:subNode options:inOptions error:outError];
 	}
 	
-
+    
 	
-		
+    
 	return NO;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 
 
-// Optional methods that do nothing in the base class and can be overridden in subclasses, e.g. to update  
+// Optional methods that do nothing in the base class and can be overridden in subclasses, e.g. to update
 // or get rid of cached data...
 
 

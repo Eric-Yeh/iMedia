@@ -1,3 +1,4 @@
 [submodule "ObjectiveFlickr"]
 	path = ObjectiveFlickr
-	url = git://github.com/lukhnos/objectiveflickr.git
+	url = https://github.com/karelia/objectiveflickr.git
+

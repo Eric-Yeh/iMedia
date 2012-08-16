@@ -94,10 +94,7 @@
 @interface IMBAppleLoopsForGarageBandFolderParser : IMBAudioFolderParser
 @end
 
-// This subclass looks only in "iMovie.app/Contents/Resources/Sound Effects"...
 
-@interface IMBiMovieSoundEffectsFolderParser : IMBAudioFolderParser
-@end
 
 // This subclass looks only in "~/Library/Sounds"...
 

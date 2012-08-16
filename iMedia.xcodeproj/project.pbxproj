@@ -369,6 +369,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9FE307A715DDA1FC00F9F94D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FE3079F15DDA1FC00F9F94D /* ObjectiveFlickr.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6A8666490F9593B200325E1C;
+			remoteInfo = "ObjectiveFlickr (framework)";
+		};
+		9FE307A915DDA1FC00F9F94D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FE3079F15DDA1FC00F9F94D /* ObjectiveFlickr.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6ABF72E60F939BE600B9179E;
+			remoteInfo = "ObjectiveFlickr (library)";
+		};
 		CEC0F91C10852AF8002CE02E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0B7785410470A9F00D12548 /* ObjectiveFlickr.xcodeproj */;
@@ -473,6 +487,7 @@
 		8FF314CB15064BC700A76AA2 /* IMBLightroom4VideoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBLightroom4VideoParser.m; sourceTree = "<group>"; };
 		8FFCBFCE10A8CD9C00377C33 /* IMBLightroom3Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBLightroom3Parser.h; sourceTree = "<group>"; };
 		8FFCBFCF10A8CD9C00377C33 /* IMBLightroom3Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBLightroom3Parser.m; sourceTree = "<group>"; };
+		9FE3079F15DDA1FC00F9F94D /* ObjectiveFlickr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectiveFlickr.xcodeproj; path = ObjectiveFlickr/ObjectiveFlickr.xcodeproj; sourceTree = "<group>"; };
 		CE09F301124823020094EC48 /* IMBURLGetSizeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMBURLGetSizeOperation.h; sourceTree = "<group>"; };
 		CE09F302124823020094EC48 /* IMBURLGetSizeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMBURLGetSizeOperation.m; sourceTree = "<group>"; };
 		CE0E0C80104C72A200EE6B09 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
@@ -842,6 +857,7 @@
 		0867D691FE84028FC02AAC07 /* iMedia */ = {
 			isa = PBXGroup;
 			children = (
+				9FE3079F15DDA1FC00F9F94D /* ObjectiveFlickr.xcodeproj */,
 				D0760AC210C5027100F2119C /* IMBProject.xcconfig */,
 				D0CF005310C50908009EC68F /* IMBTargetDebug.xcconfig */,
 				D0CF005410C50908009EC68F /* IMBTargetRelease.xcconfig */,
@@ -944,6 +960,15 @@
 				CE6524C11253AF47003A9AA0 /* warning.tiff */,
 			);
 			name = Aperture;
+			sourceTree = "<group>";
+		};
+		9FE307A015DDA1FC00F9F94D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FE307A815DDA1FC00F9F94D /* ObjectiveFlickr.framework */,
+				9FE307AA15DDA1FC00F9F94D /* libObjectiveFlickr.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CEAF1F13125A7D8C001C3EBB /* Resources */ = {
@@ -1601,7 +1626,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "iMedia" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1631,6 +1656,10 @@
 					ProductGroup = D0CEC4861047BF7A00FA2A31 /* Products */;
 					ProjectRef = D0B7785410470A9F00D12548 /* ObjectiveFlickr.xcodeproj */;
 				},
+				{
+					ProductGroup = 9FE307A015DDA1FC00F9F94D /* Products */;
+					ProjectRef = 9FE3079F15DDA1FC00F9F94D /* ObjectiveFlickr.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1642,6 +1671,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		9FE307A815DDA1FC00F9F94D /* ObjectiveFlickr.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ObjectiveFlickr.framework;
+			remoteRef = 9FE307A715DDA1FC00F9F94D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FE307AA15DDA1FC00F9F94D /* libObjectiveFlickr.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libObjectiveFlickr.a;
+			remoteRef = 9FE307A915DDA1FC00F9F94D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D0CEC48C1047BF7A00FA2A31 /* ObjectiveFlickr.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1977,6 +2020,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -1994,6 +2038,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -2027,6 +2072,7 @@
 		D02CD49F1224F22400C773A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2037,6 +2083,7 @@
 		D02CD4A01224F22400C773A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				PRODUCT_NAME = genstrings;
@@ -2047,6 +2094,7 @@
 		D02CD4A11224F22400C773A2 /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = genstrings;
 			};
 			name = Test;
@@ -2066,6 +2114,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
@@ -2081,6 +2130,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0CF005310C50908009EC68F /* IMBTargetDebug.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "TestApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -2098,6 +2148,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0CF005410C50908009EC68F /* IMBTargetRelease.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_ENABLE_OBJC_GC = unsupported;
 				INFOPLIST_FILE = "TestApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -2115,6 +2166,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0CF005510C50908009EC68F /* IMBTargetTest.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "TestApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (

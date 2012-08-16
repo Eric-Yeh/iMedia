@@ -273,45 +273,6 @@
 
 @end
 
-//----------------------------------------------------------------------------------------------------------------------
-
-
-#pragma mark 
-
-@implementation IMBiMovieSoundEffectsFolderParser
-
-
-+ (id) folderPath
-{
-	NSString* path = [[NSWorkspace imb_threadSafeWorkspace] absolutePathForAppBundleWithIdentifier:@"com.apple.iMovie"];
-	return [path stringByAppendingPathComponent:@"/Contents/Resources/Sound Effects"];
-}
-
-
-// Register this parser, so that it gets automatically loaded...
-
-+ (void) load
-{
-	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-	if ([self folderPath]) [IMBParserController registerParserClass:self forMediaType:kIMBMediaTypeAudio];
-	[pool drain];
-}
-
-
-// Set the folder path to iMovie.app/Contents/Resources/Sound Effects...
-
-- (id) initWithMediaType:(NSString*)inMediaType
-{
-	if (self = [super initWithMediaType:inMediaType])
-	{
-		self.mediaSource = [[self class] folderPath];
-	}
-	
-	return self;
-}
-
-@end
-
 
 //----------------------------------------------------------------------------------------------------------------------
 
