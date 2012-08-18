@@ -367,6 +367,10 @@
 #pragma mark 
 #pragma mark IMBLibraryController Delegate
 
+- (void) libraryController:(IMBLibraryController*)inController willShowContextMenu:(NSMenu*)inMenu forObject:(IMBObject*)inObject
+{
+    [inMenu addItemWithTitle:@"Mark" action:nil keyEquivalent:@""];
+}
 
 - (BOOL) libraryController:(IMBLibraryController*)inController shouldCreateNodeWithParser:(IMBParser*)inParser
 {
