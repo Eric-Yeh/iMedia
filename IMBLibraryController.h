@@ -184,6 +184,9 @@ extern NSString* kIMBNodesDidChangeNotification;
 - (void) libraryController:(IMBLibraryController*)inController willShowContextMenu:(NSMenu*)inMenu forNode:(IMBNode*)inNode;
 - (void) libraryController:(IMBLibraryController*)inController willShowContextMenu:(NSMenu*)inMenu forObject:(IMBObject*)inObject;
 
+// Called when the user change the selection index(es)
+- (void) libraryController:(IMBLibraryController*)inController didChangeSelectedObjects:(NSArray*)inObjects inNode:(IMBNode*)inNode;
+
 // Called when the user double clicks selected object in one of the object views. If the delegate chooses to
 // handle the event iteself it must return YES. If NO is returned, the framework will invoke the default event
 // handling behavior (downloading the files to standard loaction and opening in default app)...

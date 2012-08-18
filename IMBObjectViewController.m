@@ -1660,6 +1660,14 @@ NSString* const IMBObjectViewControllerSegmentedControlKey = @"SegmentedControl"
 			[panel refreshCurrentPreviewItem];
 		}
 	}
+    
+    id delegate = self.delegate;
+    if ([delegate respondsToSelector:@selector(libraryController:didChangeSelectedObjects:inNode:)]) {
+        IMBLibraryController* controller = self.libraryController;
+        IMBNode* node = self.currentNode;
+        NSArray* objects = [ibObjectArrayController selectedObjects];
+        [delegate libraryController:controller didChangeSelectedObjects:objects inNode:node];
+    }
 }
 
 
